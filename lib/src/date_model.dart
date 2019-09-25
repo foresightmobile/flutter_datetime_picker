@@ -195,8 +195,8 @@ class DatePickerModel extends CommonPickerModel {
   }
 
   @override
-  void setLeftIndex(int index) {
-    super.setLeftIndex(index);
+  void setRightIndex(int index) {
+    super.setRightIndex(index);
     //adjust middle
     int destYear = index + minTime.year;
     int minMonth = _minMonthOfCurrentYear();
@@ -279,8 +279,8 @@ class DatePickerModel extends CommonPickerModel {
   }
 
   @override
-  void setRightIndex(int index) {
-    super.setRightIndex(index);
+  void setLeftIndex(int index) {
+    super.setLeftIndex(index);
     int minDay = _minDayOfCurrentMonth();
     currentTime = currentTime.isUtc
         ? DateTime.utc(
@@ -296,9 +296,9 @@ class DatePickerModel extends CommonPickerModel {
   }
 
   @override
-  String leftStringAtIndex(int index) {
-    if (index >= 0 && index < leftList.length) {
-      return leftList[index];
+  String rightStringAtIndex(int index) {
+    if (index >= 0 && index < rightList.length) {
+      return rightList[index];
     } else {
       return null;
     }
@@ -314,9 +314,9 @@ class DatePickerModel extends CommonPickerModel {
   }
 
   @override
-  String rightStringAtIndex(int index) {
-    if (index >= 0 && index < rightList.length) {
-      return rightList[index];
+  String leftStringAtIndex(int index) {
+    if (index >= 0 && index < leftList.length) {
+      return leftList[index];
     } else {
       return null;
     }

@@ -382,7 +382,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
 
   // Title View
   Widget _renderTitleActionsView(DatePickerTheme theme) {
-    String done = _localeDone();
+    String confirm = _localeConfirm();
 
     return Container(
       height: theme.titleHeight,
@@ -397,7 +397,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
               pressedOpacity: 0.3,
               padding: EdgeInsets.only(right: 16, top: 0),
               child: Text(
-                '$done',
+                '$confirm',
                 style: theme.doneStyle,
               ),
               onPressed: () {
@@ -413,8 +413,8 @@ class _DatePickerState extends State<_DatePickerComponent> {
     );
   }
 
-  String _localeDone() {
-    return i18nObjInLocale(widget.locale)['done'];
+  String _localeConfirm() {
+    return i18nObjInLocale(widget.locale)['confirm'];
   }
 }
 

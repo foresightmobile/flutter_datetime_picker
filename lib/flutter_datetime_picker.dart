@@ -383,7 +383,6 @@ class _DatePickerState extends State<_DatePickerComponent> {
   // Title View
   Widget _renderTitleActionsView(DatePickerTheme theme) {
     String done = _localeDone();
-    String cancel = _localeCancel();
 
     return Container(
       height: theme.titleHeight,
@@ -391,18 +390,6 @@ class _DatePickerState extends State<_DatePickerComponent> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Container(
-            height: theme.titleHeight,
-            child: CupertinoButton(
-              pressedOpacity: 0.3,
-              padding: EdgeInsets.only(left: 16, top: 0),
-              child: Text(
-                '$cancel',
-                style: theme.cancelStyle,
-              ),
-              onPressed: () => Navigator.pop(context),
-            ),
-          ),
           Container(
             height: theme.titleHeight,
             child: CupertinoButton(
@@ -427,10 +414,6 @@ class _DatePickerState extends State<_DatePickerComponent> {
 
   String _localeDone() {
     return i18nObjInLocale(widget.locale)['done'];
-  }
-
-  String _localeCancel() {
-    return i18nObjInLocale(widget.locale)['cancel'];
   }
 }
 

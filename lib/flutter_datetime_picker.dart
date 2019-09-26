@@ -390,6 +390,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
+          Container(),
           Container(
             height: theme.titleHeight,
             child: CupertinoButton(

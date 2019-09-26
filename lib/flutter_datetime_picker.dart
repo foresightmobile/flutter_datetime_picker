@@ -397,7 +397,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
               pressedOpacity: 0.3,
               padding: EdgeInsets.only(right: 16, top: 0),
               child: Text(
-                '$confirm',
+                'Confirm',
                 style: theme.doneStyle,
               ),
               onPressed: () {

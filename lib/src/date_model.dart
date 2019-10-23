@@ -198,33 +198,33 @@ class DatePickerModel extends CommonPickerModel {
   void setLeftIndex(int index) {
     super.setLeftIndex(index);
     //adjust middle
-    int destYear = currentTime.year;
+    int destDay = index + minTime.day;
     int minMonth = _minMonthOfCurrentYear();
     DateTime newTime;
     //change date time
-    if (currentTime.month == 2 && currentTime.day == 29) {
+    if (currentTime.month == 2 && destDay == 29) {
       newTime = currentTime.isUtc
           ? DateTime.utc(
-              destYear,
+              currentTime.year,
               currentTime.month,
-              calcDateCount(destYear, 2),
+              calcDateCount(currentTime.year, 2),
             )
           : DateTime(
-              destYear,
+              currentTime.year,
               currentTime.month,
-              calcDateCount(destYear, 2),
+              calcDateCount(currentTime.year, 2),
             );
     } else {
       newTime = currentTime.isUtc
           ? DateTime.utc(
-              destYear,
+              currentTime.year,
               currentTime.month,
-              currentTime.day,
+              destDay,
             )
           : DateTime(
-              destYear,
+              currentTime.year,
               currentTime.month,
-              currentTime.day,
+              destDay,
             );
     }
     //min/max check
@@ -281,17 +281,17 @@ class DatePickerModel extends CommonPickerModel {
   @override
   void setRightIndex(int index) {
     super.setRightIndex(index);
-    int minDay = _minDayOfCurrentMonth();
+    int minYear = minTime.year;
     currentTime = currentTime.isUtc
         ? DateTime.utc(
-            currentTime.year,
+            minYear + index,
             currentTime.month,
-            minDay + index,
+            currentTime.day,
           )
         : DateTime(
-            currentTime.year,
+            minYear + index,
             currentTime.month,
-            minDay + index,
+            currentTime.day,
           );
   }
 

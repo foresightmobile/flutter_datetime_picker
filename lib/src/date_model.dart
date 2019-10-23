@@ -275,7 +275,7 @@ class DatePickerModel extends CommonPickerModel {
 
     _fillRightLists();
     int minDay = _minDayOfCurrentMonth();
-    _currentRightIndex = currentTime.day - minDay;
+    _currentLeftIndex = currentTime.day - minDay;
   }
 
   @override

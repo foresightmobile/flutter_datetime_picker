@@ -198,7 +198,7 @@ class DatePickerModel extends CommonPickerModel {
   void setLeftIndex(int index) {
     super.setLeftIndex(index);
     //adjust middle
-    int destYear = index + minTime.year;
+    int destYear = currentTime.year;
     int minMonth = _minMonthOfCurrentYear();
     DateTime newTime;
     //change date time
